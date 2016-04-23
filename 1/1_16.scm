@@ -1,6 +1,3 @@
-(define (even? n)
-  (= (remainder n 2) 0))
-
 (define (fast-expt b n)
   (define (iterator a b n)
     (cond ((= n 0) a)
