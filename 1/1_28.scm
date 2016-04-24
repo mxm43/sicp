@@ -1,10 +1,9 @@
 (define (square n) (* n n))
 
 (define (check-nontrivial-sqrt n m)
-   (let ((r (remainder (square n) m)))
-        (if (and (not (= n 1)) (not (= n (- m 1))) (= r 1))
-            0
-            r)))
+  (if (and (not (= n 1)) (not (= n (- m 1))) (= (remainder (square n) m) 1))
+      0
+      (remainder (square n) m)))
 
 (define (expmod base exp m)
   (cond ((= exp 0) 1)
