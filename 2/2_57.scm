@@ -25,8 +25,8 @@
 (define (addend s) (cadr s))
 
 (define (augend s)
-  (if (null? (cddr s))
-      0
+  (if (null? (cdddr s))
+      (caddr s)
       (cons '+ (cddr s))))
 
 (define (product? x)
@@ -35,8 +35,8 @@
 (define (multiplier p) (cadr p))
 
 (define (multiplicand p)
-  (if (null? (cddr p))
-      1
+  (if (null? (cdddr p))
+      (caddr p)
       (cons '* (cddr p))))
 
 (define (deriv exp var)
