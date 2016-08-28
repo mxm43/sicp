@@ -1,0 +1,6 @@
+(define (make-monitored func)
+  (let ((calls 0))
+    (lambda (param)
+      (cond ((eq? param 'how-many-calls?) calls)
+            ((eq? param 'reset-count) (begin (set! calls 0) calls))
+            (else (begin (set! calls (+ calls 1)) (func param)))))))
