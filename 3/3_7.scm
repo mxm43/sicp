@@ -1,0 +1,6 @@
+(define (make-joint account origin-passwd new-passwd)
+  (define (dispatch p m)
+    (if (eq? p new-passwd)
+        (account origin-passwd m)
+        (lambda (arg) "Incorrect password")))
+  dispatch)
